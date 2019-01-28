@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'fname', 'mname', 'lname', 'email', 'password',
     ];
 
     /**
@@ -27,4 +27,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role_user(){
+        return $this->hasMany('App\RoleUser', 'user_id', 'id');
+    }
+
+    public function is($role_slug){
+        $role_users = $this->role_user()->get();
+        foreach($role_users as $ru){
+            if( $ru->role->slug == $role_slug ){
+                return true;
+            }
+        }
+        return false;
+    }
 }

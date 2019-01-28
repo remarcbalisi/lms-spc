@@ -17,4 +17,51 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(
+    
+    [   
+        'prefix' => 'learner',
+        'middleware' => [
+            'auth:web',
+            'learner_acc'
+        ]
+
+    ],
+    
+    function () {
+    Route::get('/home', 'Learner\UserController@home')->name('learner-home');
+
+});
+
+Route::group(
+    
+    [   
+        'prefix' => 'lecturer',
+        'middleware' => [
+            'auth:web',
+            'lecturer_acc'
+        ]
+
+    ],
+    
+    function () {
+    Route::get('/home', 'Lecturer\UserController@home')->name('lecturer-home');
+
+});
+
+
+Route::group(
+    
+    [   
+        'prefix' => 'admin',
+        'middleware' => [
+            'auth:web',
+            'admin_acc'
+        ]
+
+    ],
+    
+    function () {
+    Route::get('/home', 'Admin\UserController@home')->name('admin-home');
+
+});
