@@ -6,7 +6,7 @@ update the DB_DATABASE, DB_USERNAME, DB_PASSWORD inside .env
 
 run *composer install*
 
-#Migrate Tables
+# Migrate Tables
 
 run *php artisan migrate --seed*
 
