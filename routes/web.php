@@ -66,6 +66,7 @@ Route::group(
     Route::get('/create-academic-year', 'Admin\AcademicYearController@create')->name('admin-academic-year-create');
     Route::post('/store-academic-year', 'Admin\AcademicYearController@store')->name('admin-academic-year-store');
     Route::get('/list-academic-year', 'Admin\AcademicYearController@list')->name('admin-academic-year-list');
+    Route::get('/view-academic-year/{year_id}', 'Admin\AcademicYearController@view')->name('admin-academic-year-view');
     Route::get('/edit-academic-year/{year_id}', 'Admin\AcademicYearController@edit')->name('admin-academic-year-edit');
     Route::put('/update-academic-year/{year_id}', 'Admin\AcademicYearController@update')->name('admin-academic-year-update');
     Route::delete('/delete-academic-year/{year_id}', 'Admin\AcademicYearController@delete')->name('admin-academic-year-delete');

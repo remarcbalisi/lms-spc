@@ -31,7 +31,7 @@
                                         <td>{{$academic_year->start}}</td>
                                         <td>{{$academic_year->end}}</td>
                                         <td>
-                                            <a>
+                                            <a href="{{route('admin-academic-year-view', ['year_id'=>$academic_year->id])}}">
                                                 <button type="button" class="btn btn-primary btn-sm">View</button>
                                             </a>
                                             <a href="{{route('admin-academic-year-edit', ['year_id'=>$academic_year->id])}}">

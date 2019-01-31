@@ -22,6 +22,12 @@ class AcademicYearController extends Controller
         ]);
     }
 
+    public function view($academic_year_id){
+        return view('admin.academic_year.view')->with([
+            'academic_year' => AcademicYear::where('id', '=', $academic_year_id)->first()
+        ]);
+    }
+
     public function list(){
         return view('admin.academic_year.list')->with([
            'academic_years' => AcademicYear::get()
