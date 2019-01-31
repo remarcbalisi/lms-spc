@@ -59,7 +59,7 @@
                                 <a class="dropdown-item" href="{{route('admin-user-create')}}">
                                     Create
                                 </a>
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{{route('admin-user-list')}}">
                                     List
                                 </a>
                             </div>

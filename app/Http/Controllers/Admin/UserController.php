@@ -15,6 +15,12 @@ class UserController extends Controller
         return view('admin.home');
     }
 
+    public function list(){
+        return view('admin.user.list')->with([
+            'users' => User::get()
+        ]);
+    }
+
     public function create(){
         return view('admin.user.create')->with([
             'roles' => Role::get()

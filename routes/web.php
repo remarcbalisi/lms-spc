@@ -73,6 +73,7 @@ Route::group(
     Route::get('/create-user', 'Admin\UserController@create')->name('admin-user-create');
     Route::post('/store-user', 'Admin\UserController@store')->name('admin-user-store');
     Route::get('/edit-user/{user_id}', 'Admin\UserController@edit')->name('admin-user-edit');
+    Route::get('/list-users', 'Admin\UserController@list')->name('admin-user-list');
     Route::put('/update-user/{user_id}', 'Admin\UserController@update')->name('admin-user-update');
 
 });
