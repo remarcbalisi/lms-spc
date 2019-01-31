@@ -72,5 +72,7 @@ Route::group(
     Route::delete('/delete-academic-year/{year_id}', 'Admin\AcademicYearController@delete')->name('admin-academic-year-delete');
     Route::get('/create-user', 'Admin\UserController@create')->name('admin-user-create');
     Route::post('/store-user', 'Admin\UserController@store')->name('admin-user-store');
+    Route::get('/edit-user/{user_id}', 'Admin\UserController@edit')->name('admin-user-edit');
+    Route::put('/update-user/{user_id}', 'Admin\UserController@update')->name('admin-user-update');
 
 });

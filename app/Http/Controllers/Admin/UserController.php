@@ -29,6 +29,7 @@ class UserController extends Controller
             'lname' => 'required|max:45',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
+            'role' => 'required',
         ]);
 
         $new_user = new User;
@@ -47,5 +48,44 @@ class UserController extends Controller
         return redirect()->back()->with([
             'success_msg' => 'Successfully added ' .$new_user->fname
         ]);
+    }
+
+    public function edit($user_id){
+        return view('admin.user.edit')->with([
+            'user' => User::find($user_id),
+            'roles' => Role::get(),
+        ]);
+    }
+
+    public function update(Request $request, $user_id){
+        $validatedData = $request->validate([
+            'fname' => 'required|max:45',
+            'mname' => 'required|max:45',
+            'lname' => 'required|max:45',
+            'email' => 'required|email|unique:users,email,'.$user_id,
+            'role' => 'required',
+        ]);
+
+        $user = User::find($user_id);
+        $user->fname = $request->input('fname');
+        $user->mname = $request->input('mname');
+        $user->lname = $request->input('lname');
+        $user->email = $request->input('email');
+        if ( $request->input('password') != null ){
+            $request->validate([
+                'password' => 'required|confirmed',
+            ]);
+            $user->password = Hash::make($request->input('password'));
+        }
+        $user->save();
+
+        $role_user = RoleUser::where('user_id', '=', $user->id)->first();
+        $role_user->role_id = $request->input('role');
+        $role_user->save();
+
+        return redirect()->back()->with([
+            'success_msg' => 'Successfully updated ' .$user->fname
+        ]);
+
     }
 }
