@@ -59,6 +59,15 @@
                                     <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <select class="form-control" name="role" id="role">
+                                        @foreach($roles as $role)
+                                        <option value="{{$role->id}}">{{$role->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 <button type="submit" class="btn btn-success">Create</button>
 
                             </form>
