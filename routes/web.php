@@ -63,5 +63,10 @@ Route::group(
     
     function () {
     Route::get('/home', 'Admin\UserController@home')->name('admin-home');
+    Route::get('/create-academic-year', 'Admin\AcademicYearController@create')->name('admin-academic-year-create');
+    Route::post('/store-academic-year', 'Admin\AcademicYearController@store')->name('admin-academic-year-store');
+    Route::get('/list-academic-year', 'Admin\AcademicYearController@list')->name('admin-academic-year-list');
+    Route::get('/edit-academic-year/{year_id}', 'Admin\AcademicYearController@edit')->name('admin-academic-year-edit');
+    Route::put('/update-academic-year/{year_id}', 'Admin\AcademicYearController@update')->name('admin-academic-year-update');
 
 });

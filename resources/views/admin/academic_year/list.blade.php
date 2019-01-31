@@ -34,6 +34,9 @@
                                             <a>
                                                 <button type="button" class="btn btn-primary">View</button>
                                             </a>
+                                            <a href="{{route('admin-academic-year-edit', ['year_id'=>$academic_year->id])}}">
+                                                <button type="button" class="btn btn-warning">Edit</button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
