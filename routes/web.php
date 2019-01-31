@@ -70,10 +70,12 @@ Route::group(
     Route::get('/edit-academic-year/{year_id}', 'Admin\AcademicYearController@edit')->name('admin-academic-year-edit');
     Route::put('/update-academic-year/{year_id}', 'Admin\AcademicYearController@update')->name('admin-academic-year-update');
     Route::delete('/delete-academic-year/{year_id}', 'Admin\AcademicYearController@delete')->name('admin-academic-year-delete');
+    Route::get('/view-user/{user_id}', 'Admin\UserController@view')->name('admin-user-view');
     Route::get('/create-user', 'Admin\UserController@create')->name('admin-user-create');
     Route::post('/store-user', 'Admin\UserController@store')->name('admin-user-store');
     Route::get('/edit-user/{user_id}', 'Admin\UserController@edit')->name('admin-user-edit');
     Route::get('/list-users', 'Admin\UserController@list')->name('admin-user-list');
     Route::put('/update-user/{user_id}', 'Admin\UserController@update')->name('admin-user-update');
+    Route::delete('/delete-user/{user_id}', 'Admin\UserController@delete')->name('admin-user-delete');
 
 });

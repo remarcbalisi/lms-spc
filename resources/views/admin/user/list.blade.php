@@ -30,15 +30,17 @@
                                     <td>{{$user->fname . ' ' . $user->lname}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>
-                                        <a>
-                                            <button type="button" class="btn btn-primary">View</button>
+                                        <a href="{{route('admin-user-view', ['user_id'=>$user->id])}}">
+                                            <button type="button" class="btn btn-primary btn-sm">View</button>
                                         </a>
                                         <a href="{{route('admin-user-edit', ['user_id'=>$user->id])}}">
-                                            <button type="button" class="btn btn-warning">Edit</button>
+                                            <button type="button" class="btn btn-warning btn-sm">Edit</button>
                                         </a>
-                                        <a>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </a>
+                                        <form action="{{route('admin-user-delete', ['user_id'=>$user->id])}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

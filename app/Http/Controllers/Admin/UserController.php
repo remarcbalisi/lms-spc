@@ -15,6 +15,12 @@ class UserController extends Controller
         return view('admin.home');
     }
 
+    public function view($user_id){
+        return view('admin.user.view')->with([
+            'user' => User::find($user_id)
+        ]);
+    }
+
     public function list(){
         return view('admin.user.list')->with([
             'users' => User::get()
@@ -93,5 +99,11 @@ class UserController extends Controller
             'success_msg' => 'Successfully updated ' .$user->fname
         ]);
 
+    }
+
+    public function delete(Request $request, $user_id){
+        $user = User::find($user_id);
+        $user->delete();
+        return redirect()->back();
     }
 }
