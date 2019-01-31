@@ -32,11 +32,16 @@
                                         <td>{{$academic_year->end}}</td>
                                         <td>
                                             <a>
-                                                <button type="button" class="btn btn-primary">View</button>
+                                                <button type="button" class="btn btn-primary btn-sm">View</button>
                                             </a>
                                             <a href="{{route('admin-academic-year-edit', ['year_id'=>$academic_year->id])}}">
-                                                <button type="button" class="btn btn-warning">Edit</button>
+                                                <button type="button" class="btn btn-warning btn-sm">Edit</button>
                                             </a>
+                                            <form action="{{route('admin-academic-year-delete', ['year_id'=>$academic_year->id])}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

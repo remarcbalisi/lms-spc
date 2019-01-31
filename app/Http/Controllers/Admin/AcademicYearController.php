@@ -43,4 +43,10 @@ class AcademicYearController extends Controller
             'success_msg' => 'Academic year ' . $new_academic_year->start . ' - ' . $new_academic_year->end . ' Successfully updated'
         ]);
     }
+
+    public function delete(Request $request, $year_id){
+        $academic_year = AcademicYear::where('id', '=', $year_id)->first();
+        $academic_year->delete();
+        return redirect()->back();
+    }
 }

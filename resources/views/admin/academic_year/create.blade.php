@@ -21,15 +21,15 @@
                             @endif
 
 
-                            <form method="post" action="{{route('admin-academic-year-update')}}">
+                            <form method="post" action="{{route('admin-academic-year-store')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="start_year">Start Year</label>
-                                    <input type="number" class="form-control" name="start_year" id="start_year" value="{{$academic_year->start}}" placeholder="Start Year">
+                                    <input type="number" class="form-control" name="start_year" id="start_year" placeholder="Start Year">
                                 </div>
                                 <div class="form-group">
                                     <label for="end_year">End Year</label>
-                                    <input type="number" class="form-control" name="end_year" id="end_year" value="{{$academic_year->end}}" placeholder="End Year">
+                                    <input type="number" class="form-control" name="end_year" id="end_year" placeholder="End Year">
                                 </div>
 
                                 <button type="submit" class="btn btn-success">Create</button>
