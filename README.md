@@ -26,4 +26,6 @@ Emails are created randomly using faker.
 All Passwords are *test*
 
 # Storage Permission
+run php artisan storage:link
+
 run "_chown -R www-data:root ._" in project root
