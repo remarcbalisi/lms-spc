@@ -24,3 +24,6 @@ Please see your database for the account credentials of 25 lecturers and 25 lear
 Emails are created randomly using faker.
 
 All Passwords are *test*
+
+# Storage Permission
+run "_chown -R www-data:root ._" in project root
