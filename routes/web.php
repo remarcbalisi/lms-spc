@@ -83,5 +83,7 @@ Route::group(
     Route::post('/store-course', 'Admin\CourseController@store')->name('admin-course-store');
     Route::get('/create-section', 'Admin\SectionController@create')->name('admin-section-create');
     Route::post('/store-section', 'Admin\SectionController@store')->name('admin-section-store');
+    Route::get('/create-classroom', 'Admin\ClassroomController@create')->name('admin-classroom-create');
+    Route::post('/store-classroom', 'Admin\ClassroomController@store')->name('admin-classroom-store');
 
 });
