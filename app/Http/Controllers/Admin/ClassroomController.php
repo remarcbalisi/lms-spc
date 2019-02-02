@@ -35,7 +35,7 @@ class ClassroomController extends Controller
             'course_id' => $request->input('course'),
             'section_id' => $request->input('section'),
         ])->first();
-        
+
         if ( $check_classroom_exist ){
             return redirect()->back()->withErrors([
                 'classroom_exist' => 'Classroom' . $check_classroom_exist->course->title . " already exist."
@@ -51,6 +51,12 @@ class ClassroomController extends Controller
 
         return redirect()->back()->with([
             'success_msg' => 'Successfully added ' . $new_classroom->course->title . " classroom."
+        ]);
+    }
+
+    public function list(){
+        return view('admin.classroom.list')->with([
+            'classrooms' => Classroom::get()
         ]);
     }
 }
