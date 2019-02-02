@@ -27,7 +27,7 @@ class CourseController extends Controller
             $image = $request->file('img');
             $extension = $request->img->extension();
             $filename = 'course_' . time() . '.' . $extension;
-            Image::make($image)->save( storage_path('/app/public/course/' . $filename ) );
+            Image::make($image)->save( storage_path('app/public/course/' . $filename ) );
             $new_course->img = 'course/' . $filename;
         };
         $new_course->save();
