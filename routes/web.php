@@ -77,5 +77,7 @@ Route::group(
     Route::get('/list-users', 'Admin\UserController@list')->name('admin-user-list');
     Route::put('/update-user/{user_id}', 'Admin\UserController@update')->name('admin-user-update');
     Route::delete('/delete-user/{user_id}', 'Admin\UserController@delete')->name('admin-user-delete');
+    Route::get('/create-semester', 'Admin\SemesterController@create')->name('admin-semester-create');
+    Route::post('/store-semester', 'Admin\SemesterController@store')->name('admin-semester-store');
 
 });
