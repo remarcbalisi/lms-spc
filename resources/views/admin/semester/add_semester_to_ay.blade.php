@@ -31,7 +31,7 @@
                         @endif
 
 
-                        <form method="post" action="{{route('admin-semester-to-academic-year')}}">
+                        <form method="post" action="{{route('admin-store-semester-to-academic-year')}}">
                             @csrf
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">

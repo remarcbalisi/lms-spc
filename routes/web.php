@@ -78,9 +78,9 @@ Route::group(
     Route::put('/update-user/{user_id}', 'Admin\UserController@update')->name('admin-user-update');
     Route::delete('/delete-user/{user_id}', 'Admin\UserController@delete')->name('admin-user-delete');
     Route::get('/create-semester', 'Admin\SemesterController@create')->name('admin-semester-create');
-    Route::get('/add-semester-to-academic-year', 'Admin\SemesterController@add_semester_to_ay')->name('admin-semester-to-academic-year');
+    Route::get('/add-semester-to-academic-year', 'Admin\SemesterController@add_semester_to_ay')->name('admin-add-semester-to-academic-year');
     Route::post('/store-semester', 'Admin\SemesterController@store')->name('admin-semester-store');
-    Route::post('/store-semester-to-academic-year', 'Admin\SemesterController@store_semester_to_ay')->name('admin-semester-to-academic-year');
+    Route::post('/store-semester-to-academic-year', 'Admin\SemesterController@store_semester_to_ay')->name('admin-store-semester-to-academic-year');
     Route::get('/create-course', 'Admin\CourseController@create')->name('admin-course-create');
     Route::post('/store-course', 'Admin\CourseController@store')->name('admin-course-store');
     Route::get('/create-section', 'Admin\SectionController@create')->name('admin-section-create');

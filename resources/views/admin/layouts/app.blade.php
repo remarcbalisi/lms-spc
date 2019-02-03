@@ -77,7 +77,7 @@
                                 <a class="dropdown-item" href="">
                                     List
                                 </a>
-                                <a class="dropdown-item" href="{{route('admin-semester-to-academic-year')}}">
+                                <a class="dropdown-item" href="{{route('admin-add-semester-to-academic-year')}}">
                                     Add Semester To Academic year
                                 </a>
                             </div>
