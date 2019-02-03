@@ -40,4 +40,11 @@ class CourseController extends Controller
             'success_msg' => 'Successfully added ' . $new_course->title
         ]);
     }
+
+    public function courses_by_semester_ay($academic_year_semester_id){
+        return view('admin.course.courses_by_semester_ay')->with([
+            'courses' => AcademicYearSemester::where('id', $academic_year_semester_id)->first()->courses()->get(),
+            'academic_year_semester' => AcademicYearSemester::where('id', $academic_year_semester_id)->first(),
+        ]);
+    }
 }

@@ -16,4 +16,8 @@ class AcademicYear extends Model
     protected $fillable = [
         'start', 'end'
     ];
+
+    public function academic_year_semesters(){
+        return $this->hasMany("App\AcademicYearSemester", "academic_year_id", "id");
+    }
 }

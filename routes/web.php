@@ -82,6 +82,7 @@ Route::group(
     Route::post('/store-semester', 'Admin\SemesterController@store')->name('admin-semester-store');
     Route::post('/store-semester-to-academic-year', 'Admin\SemesterController@store_semester_to_ay')->name('admin-store-semester-to-academic-year');
     Route::get('/create-course', 'Admin\CourseController@create')->name('admin-course-create');
+    Route::get('/courses/ay-semester/{academic_year_semester_id}', 'Admin\CourseController@courses_by_semester_ay')->name('admin-course-by-ay-semester');
     Route::post('/store-course', 'Admin\CourseController@store')->name('admin-course-store');
     Route::get('/create-section', 'Admin\SectionController@create')->name('admin-section-create');
     Route::post('/store-section', 'Admin\SectionController@store')->name('admin-section-store');
