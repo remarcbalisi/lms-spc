@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\AcademicYearSemester;
 use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,7 +11,9 @@ use Image;
 class CourseController extends Controller
 {
     public function create(){
-        return view('admin.course.create');
+        return view('admin.course.create')->with([
+            "academic_year_semesters" => AcademicYearSemester::get(),
+        ]);
     }
 
     public function store(Request $request){
@@ -18,11 +21,13 @@ class CourseController extends Controller
             'title' => 'required|unique:course|max:100',
             'code' => 'required|unique:course|max:20',
             'description' => 'required',
+            'academic_year_semester_id' => 'required',
         ]);
         $new_course = new Course;
         $new_course->title = $request->input('title');
         $new_course->code = $request->input('code');
         $new_course->description = $request->input('description');
+        $new_course->academic_year_semester_id = $request->input('academic_year_semester_id');
         if($request->hasFile('img')){
             $image = $request->file('img');
             $extension = $request->img->extension();
