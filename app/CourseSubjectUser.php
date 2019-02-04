@@ -11,4 +11,12 @@ class CourseSubjectUser extends Model
     protected $fillable = [
         "user_id", "course_subject_id", "activation_link", "is_activated",
     ];
+
+    public function user(){
+        return $this->belongsTo("App\User", "user_id");
+    }
+
+    public function course_subject(){
+        return $this->belongsTo("App\CourseSubject", "course_subject_id");
+    }
 }

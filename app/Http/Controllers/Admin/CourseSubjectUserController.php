@@ -44,4 +44,10 @@ class CourseSubjectUserController extends Controller
             'success_msg' => "Successfully enrolled!"
         ]);
     }
+
+    public function students_list($course_subject_user_id){
+        return view('admin.classes.students')->with([
+            'students' => CourseSubjectUser::where('id', $course_subject_user_id)->get(),
+        ]);
+    }
 }

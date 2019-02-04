@@ -15,14 +15,14 @@
                         @endif
 
                         <ul class="list-group">
-                            @foreach($classes as $class)
+                            @foreach($students as $student)
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <li class="list-group-item">{{$class->getFullName()}}</li>
+                                        <li class="list-group-item">{{$student->user->fname}} {{$student->user->lname}}</li>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="{{route('admin-view-students', ['course_subject_id'=>$class->id])}}">
-                                            <button type="button" class="btn btn-info">View Students</button>
+                                        <a>
+                                            <button type="button" class="btn btn-info">Info</button>
                                         </a>
                                     </div>
                                 </div>

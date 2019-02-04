@@ -94,6 +94,7 @@ Route::group(
     Route::post('/store-subject-to-course', 'Admin\CourseSubjectController@store')->name('admin-store-subject-to-course');
     Route::get('/view-classes', 'Admin\CourseSubjectController@view_classes')->name('admin-view-classes');
     Route::get('/enroll-student', 'Admin\CourseSubjectUserController@enroll')->name('admin-enroll-student');
+    Route::get('/view-students/{course_subject_id}', 'Admin\CourseSubjectUserController@students_list')->name('admin-view-students');
     Route::post('/store-enroll-student', 'Admin\CourseSubjectUserController@store_enroll')->name('admin-store-enroll-student');
 
 });
