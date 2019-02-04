@@ -54,4 +54,10 @@ class CourseSubjectController extends Controller
             'success_msg' => "Successfull added!"
         ]);
     }
+
+    public function view_classes(){
+        return view('admin.classes.list')->with([
+            'classes' => CourseSubject::get(),
+        ]);
+    }
 }
