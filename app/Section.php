@@ -9,11 +9,7 @@ class Section extends Model
     protected $table = "section";
 
     protected $fillable = [
-        "name", "slug", "course_id"
+        "name", "slug"
     ];
-
-    public function course(){
-        $this->belongsTo("App\Course", "course_id");
-    }
 
 }
