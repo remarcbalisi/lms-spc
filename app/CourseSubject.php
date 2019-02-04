@@ -17,14 +17,18 @@ class CourseSubject extends Model
     }
 
     public function subject(){
-        return $this->belongsTo("App\Course", "subject_id");
+        return $this->belongsTo("App\Subject", "subject_id");
     }
 
     public function academic_year_semester(){
-        return $this->belongsTo("App\Course", "academic_year_semester");
+        return $this->belongsTo("App\AcademicYearSemester", "academic_year_semester_id");
     }
 
     public function section(){
-        return $this->belongsTo("App\Course", "section");
+        return $this->belongsTo("App\Section", "section_id");
+    }
+
+    public function getFullName(){
+        return $this->academic_year_semester->getSemesterFullName() . ', ' . $this->course->code . ', ' . $this->subject->title . ', section: ' . $this->section->name;
     }
 }

@@ -128,6 +128,9 @@
                                 <a class="dropdown-item" href="{{route('admin-add-subject-to-course')}}">
                                     Add Subject to a Course
                                 </a>
+                                <a class="dropdown-item" href="{{route('admin-enroll-student')}}">
+                                    Enroll student to a Course
+                                </a>
                             </div>
                         </li>
 

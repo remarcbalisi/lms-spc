@@ -92,5 +92,6 @@ Route::group(
     Route::post('/store-subject', 'Admin\SubjectController@store')->name('admin-subject-store');
     Route::get('/add-subject-to-course', 'Admin\CourseSubjectController@create')->name('admin-add-subject-to-course');
     Route::post('/store-subject-to-course', 'Admin\CourseSubjectController@store')->name('admin-store-subject-to-course');
+    Route::get('/enroll-student', 'Admin\CourseSubjectUserController@enroll')->name('admin-enroll-student');
 
 });
