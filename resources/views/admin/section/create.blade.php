@@ -33,17 +33,6 @@
 
                         <form method="post" action="{{route('admin-section-store')}}">
                             @csrf
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="course_id">Course</label>
-                                </div>
-                                <select class="custom-select" name="course_id" id="course_id">
-                                    <option selected>Choose...</option>
-                                    @foreach( $courses as $course )
-                                        <option value="{{$course->id}}">{{$course->title}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label for="name">Section Name</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Section Name">
