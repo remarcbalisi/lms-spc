@@ -9,6 +9,6 @@ class Course extends Model
     protected $table = "course";
 
     protected $fillable = [
-        "title", "code", "description", "img", "academic_year_semester_id"
+        "title", "code", "description", "img", "college_id"
     ];
 }

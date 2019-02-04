@@ -35,12 +35,12 @@
                             @csrf
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="academic_year_semester_id">Course</label>
+                                    <label class="input-group-text" for="college_id">College</label>
                                 </div>
-                                <select class="custom-select" name="academic_year_semester_id" id="academic_year_semester_id">
+                                <select class="custom-select" name="college_id" id="college_id">
                                     <option selected>Choose...</option>
-                                    @foreach( $academic_year_semesters as $academic_year_semester )
-                                        <option value="{{$academic_year_semester->id}}">{{$academic_year_semester->getSemesterFullName()}}</option>
+                                    @foreach( $colleges as $college )
+                                        <option value="{{$college->id}}">{{$college->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
