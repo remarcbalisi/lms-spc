@@ -31,7 +31,7 @@
                         @endif
 
 
-                        <form method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="{{route('admin-store-enroll-student')}}">
                             @csrf
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -55,7 +55,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success">Add</button>
+                            <button type="submit" class="btn btn-success">Enroll Now!</button>
                         </form>
 
 
