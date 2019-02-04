@@ -30,7 +30,7 @@ class CourseSubjectController extends Controller
         ]);
 
         $course_subject_exist = CourseSubject::where([
-            'academic_year_semester_id' => $request->input('academic_year_id'),
+            'academic_year_semester_id' => $request->input('academic_year_semester_id'),
             'course_id' => $request->input('course_id'),
             'subject_id' => $request->input('subject_id'),
             'section_id' => $request->input('section_id'),
