@@ -90,5 +90,7 @@ Route::group(
     Route::post('/store-college', 'Admin\CollegeController@store')->name('admin-college-store');
     Route::get('/create-subject', 'Admin\SubjectController@create')->name('admin-subject-create');
     Route::post('/store-subject', 'Admin\SubjectController@store')->name('admin-subject-store');
+    Route::get('/add-subject-to-course', 'Admin\CourseSubjectController@create')->name('admin-add-subject-to-course');
+    Route::post('/store-subject-to-course', 'Admin\CourseSubjectController@store')->name('admin-store-subject-to-course');
 
 });

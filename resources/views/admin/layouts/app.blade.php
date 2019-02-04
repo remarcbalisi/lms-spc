@@ -125,6 +125,9 @@
                                 <a class="dropdown-item" href="">
                                     List
                                 </a>
+                                <a class="dropdown-item" href="{{route('admin-add-subject-to-course')}}">
+                                    Add Subject to a Course
+                                </a>
                             </div>
                         </li>
 
