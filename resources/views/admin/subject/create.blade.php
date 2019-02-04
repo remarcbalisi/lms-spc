@@ -38,7 +38,7 @@
                                 <input type="text" class="form-control" name="title" id="title" placeholder="Title">
                             </div>
                             <div class="form-group">
-                                <label for="code">Course Code</label>
+                                <label for="code">Subject Code</label>
                                 <input type="text" class="form-control" name="code" id="code" placeholder="Subject Code">
                             </div>
                             <div class="form-group">
