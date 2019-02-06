@@ -45,7 +45,7 @@ Route::group(
     ],
     
     function () {
-    Route::get('/home', 'Lecturer\UserController@home')->name('lecturer-home');
+    Route::get('/home', 'Lecturer\HomeController@home')->name('lecturer-home');
 
 });
 
