@@ -19,4 +19,8 @@ class CourseSubjectUser extends Model
     public function course_subject(){
         return $this->belongsTo("App\CourseSubject", "course_subject_id");
     }
+
+    public function posts(){
+        return $this->hasMany("App\Post", "course_subject_user_id", "id");
+    }
 }

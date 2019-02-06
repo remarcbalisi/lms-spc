@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        Lecturer Home
+                        You are logged in!
                     </div>
                 </div>
             </div>

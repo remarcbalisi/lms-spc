@@ -26,7 +26,7 @@ class CourseSubjectUserController extends Controller
         $students = CourseSubjectUser::where([
             'course_subject_id' => $course_subject_id,
         ])->whereNotIn('user_id', [$lecturer_id])->get();
-        
+
 
         return view('lecturer.classes.students_list')->with([
             'lecturer' => $lecturer,
@@ -34,4 +34,5 @@ class CourseSubjectUserController extends Controller
         ]);
 
     }
+
 }

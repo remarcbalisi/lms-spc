@@ -28,6 +28,10 @@ class CourseSubject extends Model
         return $this->belongsTo("App\Section", "section_id");
     }
 
+    public function course_subject_users(){
+        return $this->hasMany("App\CourseSubjectUser", "course_subject_id", "id");
+    }
+
     public function getFullName(){
         return $this->academic_year_semester->getSemesterFullName() . ', ' . $this->course->code . ', ' . $this->subject->title . ', section: ' . $this->section->name;
     }
