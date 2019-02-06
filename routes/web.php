@@ -47,6 +47,7 @@ Route::group(
     function () {
     Route::get('/home', 'Lecturer\HomeController@home')->name('lecturer-home');
     Route::get('/my-class-list', 'Lecturer\CourseSubjectUserController@my_list')->name('lecturer-my-class-list');
+    Route::get('/class/{course_subject_id}/{lecturer_id}/students-list', 'Lecturer\CourseSubjectUserController@view_class_students')->name('lecturer-class-student-list');
 
 });
 
