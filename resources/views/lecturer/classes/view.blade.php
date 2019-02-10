@@ -87,8 +87,11 @@
                                         @foreach( $post->multimedias()->get() as $multimedia )
                                             @if( $multimedia->type == 'jpeg' || $multimedia->type == 'jpg' || $multimedia->type == 'png')
                                                 <img style="max-width: 50%;" src="{{asset('storage/' . str_replace("public/", "", $multimedia->directory))}}" >
+                                                <br>
                                             @else
-                                                <a href="" >{{$multimedia->directory}}</a>
+                                                <a href="{{route('file-download', ['multimedia_id'=>$multimedia->id])}}" >{{$multimedia->directory}}</a>
+                                                <p style="font-size: 12px;">Click the file to download</p>
+                                                <br>
                                             @endif
                                         @endforeach
                                         <div style="border-bottom: 1px solid; padding-bottom: 13px;" ></div>

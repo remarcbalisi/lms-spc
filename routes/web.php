@@ -18,6 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(
+
+    [
+        'middleware' => [
+            'auth:web',
+        ]
+
+    ],
+
+    function () {
+        Route::get('/file/download/{multimedia_id}', 'MultimediaController@download')->name('file-download');
+    });
+
+
+Route::group(
     
     [   
         'prefix' => 'learner',
