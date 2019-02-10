@@ -19,4 +19,8 @@ class Post extends Model
     public function post_type(){
         return $this->belongsTo("App\PostType", "post_type_id");
     }
+
+    public function comments(){
+        return $this->hasMany("App\Comment", "post_id", "id");
+    }
 }

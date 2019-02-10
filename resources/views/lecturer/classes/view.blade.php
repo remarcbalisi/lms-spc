@@ -86,15 +86,18 @@
                                         <div style="border-bottom: 1px solid; padding-bottom: 13px;" ></div>
                                         Comments
                                         <ul>
-                                            <li>test</li>
+                                            @foreach( $post->comments()->get() as $comment)
+                                                <li>{{$comment->body}}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <hr>
                                     <div class="col-md-12">
-                                        <form>
+                                        <form method="post" action="{{route('lecturer-store-comment', ['post_id'=>$post->id])}}">
+                                            @csrf
                                             <div class="row">
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control form-control-sm" placeholder="Comment..">
+                                                    <input name="body" type="text" class="form-control form-control-sm" placeholder="Comment..">
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button type="submit" class="btn btn-primary btn-sm mb-2">Comment</button>
