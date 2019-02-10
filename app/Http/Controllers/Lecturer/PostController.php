@@ -26,7 +26,7 @@ class PostController extends Controller
 
         if($request->hasFile('file')){
             foreach( $request->file('file') as $file ){
-                $extension = $file->extension();
+                $extension = $file->extension() ? $file->extension() : "n/a";
                 $path = $file->store('public/posts/files');
                 $new_multimedia = new Multimedia;
                 $new_multimedia->type = $extension;
