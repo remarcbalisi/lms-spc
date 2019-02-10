@@ -87,7 +87,10 @@
                                         Comments
                                         <ul>
                                             @foreach( $post->comments()->get() as $comment)
-                                                <li>{{$comment->body}}</li>
+                                                <li>
+                                                    <strong>{{$comment->commentator->fname . ' ' . $comment->commentator->lname}} says..</strong>
+                                                    {{$comment->body}}
+                                                </li>
                                             @endforeach
                                         </ul>
                                     </div>
