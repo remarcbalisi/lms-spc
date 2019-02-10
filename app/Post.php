@@ -23,4 +23,8 @@ class Post extends Model
     public function comments(){
         return $this->hasMany("App\Comment", "post_id", "id");
     }
+
+    public function multimedias(){
+        return $this->hasMany("App\Multimedia", "post_id", "id");
+    }
 }

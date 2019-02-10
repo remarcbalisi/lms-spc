@@ -44,11 +44,11 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    <span class="input-group-text" id="file">Upload</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="img" name="img" aria-describedby="Image">
-                                    <label class="custom-file-label" for="img">Choose Image</label>
+                                    <input type="file" class="custom-file-input" id="file" name="file[]" multiple aria-describedby="Image">
+                                    <label class="custom-file-label" for="file">Choose File</label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-success">Post it!</button>
@@ -83,6 +83,14 @@
                                 <div class="row">
                                     <div class="col-md-12" style="margin-bottom: 30px;">
                                         {{$post->body}}
+                                        <br>
+                                        @foreach( $post->multimedias()->get() as $multimedia )
+                                            @if( $multimedia->type == 'jpeg' || $multimedia->type == 'jpg' || $multimedia->type == 'png')
+                                                <img style="max-width: 50%;" src="{{asset('storage/' . str_replace("public/", "", $multimedia->directory))}}" >
+                                            @else
+                                                <a href="" >{{$multimedia->directory}}</a>
+                                            @endif
+                                        @endforeach
                                         <div style="border-bottom: 1px solid; padding-bottom: 13px;" ></div>
                                         Comments
                                         <ul>
