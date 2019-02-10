@@ -29,3 +29,7 @@ All Passwords are *test*
 run php artisan storage:link
 
 run "_chown -R www-data:root ._" in project root
+
+# setting up php.ini
+post_max_size = 0
+upload_max_filesize = 500M
