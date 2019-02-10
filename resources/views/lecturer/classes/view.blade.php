@@ -62,7 +62,7 @@
         <br>
 
         @foreach( $course_subject->course_subject_users()->get() as $course_subject_user )
-            @foreach( $course_subject_user->posts()->get() as $post )
+            @foreach( $course_subject_user->posts()->orderBy('created_at', 'desc')->get() as $post )
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
