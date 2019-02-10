@@ -75,6 +75,12 @@
                                 @endif
 
                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <strong>{{$course_subject_user->user->fname . ' ' . $course_subject_user->user->lname}}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="row">
                                     <div class="col-md-12" style="margin-bottom: 30px;">
                                         {{$post->body}}
                                         <div style="border-bottom: 1px solid; padding-bottom: 13px;" ></div>
@@ -91,7 +97,7 @@
                                                     <input type="text" class="form-control form-control-sm" placeholder="Comment..">
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button type="submit" class="btn btn-primary btn-sm mb-2">Confirm identity</button>
+                                                    <button type="submit" class="btn btn-primary btn-sm mb-2">Comment</button>
                                                 </div>
                                             </div>
                                         </form>
