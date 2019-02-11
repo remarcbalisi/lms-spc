@@ -5,6 +5,21 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    <div class="card-header">
+                        <a href="">Course Materials</a> |
+                        <a href="">Announcements</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
 
                     <div class="card-body">
 
