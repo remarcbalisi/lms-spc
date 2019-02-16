@@ -44,6 +44,7 @@ Route::group(
     
     function () {
     Route::get('/home', 'Learner\UserController@home')->name('learner-home');
+    Route::get('/my-class-list', 'Learner\CourseSubjectUserController@my_list')->name('learner-my-class-list');
 
 });
 
