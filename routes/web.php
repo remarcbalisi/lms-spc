@@ -47,6 +47,7 @@ Route::group(
     Route::get('/my-class-list', 'Learner\CourseSubjectUserController@my_list')->name('learner-my-class-list');
     Route::get('/classroom/{course_subject_id}', 'Learner\CourseSubjectController@view')->name('learner-view-classroom');
     Route::post('/store-post/{course_subject_user_id}', 'Learner\PostController@store')->name('learner-store-post');
+    Route::post('/store-comment/{post_id}', 'Learner\CommentController@store')->name('learner-store-comment');
 
 });
 

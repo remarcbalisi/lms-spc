@@ -115,7 +115,7 @@
                                     </div>
                                     <hr>
                                     <div class="col-md-12">
-                                        <form method="post" action="{{route('lecturer-store-comment', ['post_id'=>$post->id])}}">
+                                        <form method="post" action="{{route('learner-store-comment', ['post_id'=>$post->id])}}">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-9">
