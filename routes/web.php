@@ -48,6 +48,9 @@ Route::group(
     Route::get('/classroom/{course_subject_id}', 'Learner\CourseSubjectController@view')->name('learner-view-classroom');
     Route::post('/store-post/{course_subject_user_id}', 'Learner\PostController@store')->name('learner-store-post');
     Route::post('/store-comment/{post_id}', 'Learner\CommentController@store')->name('learner-store-comment');
+    Route::get('/my-inbox', 'Learner\MessageController@inbox')->name('learner-my-inbox');
+    Route::get('/new-message', 'Learner\MessageController@new')->name('learner-new-message');
+    Route::post('/new-message', 'Learner\MessageController@store_new_message')->name('learner-store-new-message');
 
 });
 

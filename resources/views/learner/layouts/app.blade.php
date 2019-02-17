@@ -63,10 +63,14 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->fname }} {{ Auth::user()->lname }} <span class="caret"></span>
+                                {{ Auth::user()->fname }} {{ Auth::user()->lname }} <span class="badge badge-light">{{\App\Message::where(['receiver'=>Auth::user()->id, 'is_read'=>false])->get()->count()}}</span><span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('learner-my-inbox')}}">
+                                    Inbox <span class="badge badge-light">{{\App\Message::where(['receiver'=>Auth::user()->id, 'is_read'=>false])->get()->count()}}</span>
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
