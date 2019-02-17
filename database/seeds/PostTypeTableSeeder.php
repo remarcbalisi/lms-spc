@@ -25,5 +25,10 @@ class PostTypeTableSeeder extends Seeder
             'name' => 'Course Material',
             'slug' => 'course-material',
         ]);
+
+        DB::table('post_type')->insert([
+            'name' => 'Normal Post',
+            'slug' => 'normal-post',
+        ]);
     }
 }

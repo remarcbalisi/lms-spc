@@ -46,6 +46,7 @@ Route::group(
     Route::get('/home', 'Learner\UserController@home')->name('learner-home');
     Route::get('/my-class-list', 'Learner\CourseSubjectUserController@my_list')->name('learner-my-class-list');
     Route::get('/classroom/{course_subject_id}', 'Learner\CourseSubjectController@view')->name('learner-view-classroom');
+    Route::post('/store-post/{course_subject_user_id}', 'Learner\PostController@store')->name('learner-store-post');
 
 });
 

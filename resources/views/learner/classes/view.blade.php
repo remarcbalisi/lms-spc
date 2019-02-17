@@ -45,7 +45,7 @@
                             </div>
                         @endif
 
-                        <form method="post" action="{{route('lecturer-store-post', ['course_subject_user_id' => $course_subject_user->id])}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('learner-store-post', ['course_subject_user_id' => $course_subject_user->id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <textarea class="form-control" name="body" id="body" rows="3" placeholder="What's on you mind?.."></textarea>
