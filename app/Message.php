@@ -15,4 +15,8 @@ class Message extends Model
     public function message_thread() {
         return $this->belongsTo("App\MessageThread", "message_thread_id");
     }
+
+    public function sender() {
+        return $this->belongsTo('App\User', 'sender');
+    }
 }

@@ -72,6 +72,7 @@ Route::group(
     Route::get('/class/{course_subject_id}/{lecturer_id}/students-list', 'Lecturer\CourseSubjectUserController@view_class_students')->name('lecturer-class-student-list');
     Route::post('/store-post/{course_subject_user_id}', 'Lecturer\PostController@store')->name('lecturer-store-post');
     Route::post('/store-comment/{post_id}', 'Lecturer\CommentController@store')->name('lecturer-store-comment');
+    Route::get('/my-inbox', 'Lecturer\MessageController@inbox')->name('lecturer-my-inbox');
 
 });
 
