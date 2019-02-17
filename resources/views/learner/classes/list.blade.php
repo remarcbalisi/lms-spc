@@ -18,7 +18,7 @@
                             @foreach($classes as $class)
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <a href="{{route('lecturer-view-classroom', ['course_subject_id'=>$class->course_subject_id])}}">
+                                        <a href="{{route('learner-view-classroom', ['course_subject_id'=>$class->course_subject_id])}}">
                                             <li class="list-group-item">{{$class->course_subject->getFullName()}}</li>
                                         </a>
                                     </div>
