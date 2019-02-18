@@ -73,6 +73,8 @@ Route::group(
     Route::post('/store-post/{course_subject_user_id}', 'Lecturer\PostController@store')->name('lecturer-store-post');
     Route::post('/store-comment/{post_id}', 'Lecturer\CommentController@store')->name('lecturer-store-comment');
     Route::get('/my-inbox', 'Lecturer\MessageController@inbox')->name('lecturer-my-inbox');
+    Route::get('/view/messages/{message_thread_id}', 'Lecturer\MessageController@view_messages')->name('lecturer-view-messages');
+    Route::post('/reply/{message_thread_id}', 'Lecturer\MessageController@reply')->name('lecturer-reply-message');
 
 });
 

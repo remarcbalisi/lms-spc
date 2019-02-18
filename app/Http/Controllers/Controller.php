@@ -24,7 +24,9 @@ class Controller extends BaseController
 
             foreach( MessageThread::where('user_id', $this->currentUser->id)->get() as $message_thread ) {
                 $unread_messages = $message_thread->messages()->where('is_read', false)->get();
-                array_push($new_messages, $unread_messages);
+                foreach($unread_messages as $unread_message){
+                    array_push($new_messages, $unread_message);
+                }
             }
 
             // Sharing is caring

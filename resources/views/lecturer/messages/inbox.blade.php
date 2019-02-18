@@ -21,7 +21,7 @@
                         @foreach( $message_threads as $message_thread )
                             <div class="card">
                                 <div class="card-body">
-                                    <a href="">
+                                    <a href="{{route('lecturer-view-messages',['message_thread_id'=>$message_thread->id])}}">
                                         <strong>
                                             {{$message_thread->messages()->where('sender', '!=', Auth::user()->id)->first()->sender()->first()->fname}} {{$message_thread->messages()->where('sender', '!=', Auth::user()->id)->first()->sender()->first()->lname}}
                                         </strong>
