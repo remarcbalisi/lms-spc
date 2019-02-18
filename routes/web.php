@@ -51,6 +51,8 @@ Route::group(
     Route::get('/my-inbox', 'Learner\MessageController@inbox')->name('learner-my-inbox');
     Route::get('/new-message', 'Learner\MessageController@new')->name('learner-new-message');
     Route::post('/new-message', 'Learner\MessageController@store_new_message')->name('learner-store-new-message');
+    Route::get('/view/messages/{message_thread_id}', 'Learner\MessageController@view_messages')->name('learner-view-messages');
+    Route::post('/reply/{message_thread_id}', 'Learner\MessageController@reply')->name('learner-reply-message');
 
 });
 
