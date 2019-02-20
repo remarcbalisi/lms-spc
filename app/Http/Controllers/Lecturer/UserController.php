@@ -41,4 +41,11 @@ class UserController extends Controller
             'success_msg' => 'Assessment Successfully added',
         ]);
     }
+
+    public function view_assessments($course_subject_user_id) {
+        return view('lecturer.user.view_assessments')->with([
+            'assessments' => CourseSubjectUser::where('id', $course_subject_user_id)->first()->assessments()->get(),
+            'assessment_types' => AssessmentType::get(),
+        ]);
+    }
 }

@@ -79,6 +79,7 @@ Route::group(
     Route::post('/reply/{message_thread_id}', 'Lecturer\MessageController@reply')->name('lecturer-reply-message');
     Route::get('/add/assessment/{course_subject_user__id}', 'Lecturer\UserController@add_assessment')->name('lecturer-add-assessment');
     Route::post('/store/assessment/{course_subject_user__id}', 'Lecturer\UserController@store_assessment')->name('lecturer-store-assessment');
+    Route::get('/view/assessment/{course_subject_user__id}', 'Lecturer\UserController@view_assessments')->name('lecturer-view-assessment');
 
 });
 

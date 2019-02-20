@@ -23,4 +23,8 @@ class CourseSubjectUser extends Model
     public function posts(){
         return $this->hasMany("App\Post", "course_subject_user_id", "id");
     }
+
+    public function assessments(){
+        return $this->hasMany("App\Assessment", "course_subject_user_id", "id");
+    }
 }
