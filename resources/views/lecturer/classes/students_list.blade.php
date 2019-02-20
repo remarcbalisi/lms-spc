@@ -24,6 +24,9 @@
                                         <a href="">
                                             <button type="button" class="btn btn-info">Info</button>
                                         </a>
+                                        <a href="{{route('lecturer-add-assessment', ['course_subject_user_id'=>$student->id])}}">
+                                            <button type="button" class="btn btn-info">Add Assessment</button>
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
