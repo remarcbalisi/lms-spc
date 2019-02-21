@@ -21,8 +21,11 @@
                                         <li class="list-group-item">{{$student->user->fname .' ' . $student->user->lname}}</li>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="">
-                                            <button type="button" class="btn btn-info">Info</button>
+                                        <a href="{{route('lecturer-add-assessment', ['course_subject_user_id'=>$student->id])}}">
+                                            <button type="button" class="btn btn-info btn-sm">Add Assessment</button>
+                                        </a>
+                                        <a href="{{route('lecturer-view-assessment', ['course_subject_user_id'=>$student->id])}}">
+                                            <button type="button" class="btn btn-info btn-sm">View Assessment</button>
                                         </a>
                                     </div>
                                 </div>

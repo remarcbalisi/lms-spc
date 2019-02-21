@@ -48,6 +48,12 @@ Route::group(
     Route::get('/classroom/{course_subject_id}', 'Learner\CourseSubjectController@view')->name('learner-view-classroom');
     Route::post('/store-post/{course_subject_user_id}', 'Learner\PostController@store')->name('learner-store-post');
     Route::post('/store-comment/{post_id}', 'Learner\CommentController@store')->name('learner-store-comment');
+    Route::get('/my-inbox', 'Learner\MessageController@inbox')->name('learner-my-inbox');
+    Route::get('/new-message', 'Learner\MessageController@new')->name('learner-new-message');
+    Route::post('/new-message', 'Learner\MessageController@store_new_message')->name('learner-store-new-message');
+    Route::get('/view/messages/{message_thread_id}', 'Learner\MessageController@view_messages')->name('learner-view-messages');
+    Route::post('/reply/{message_thread_id}', 'Learner\MessageController@reply')->name('learner-reply-message');
+    Route::get('/view/assessment/{course_subject_user__id}', 'Learner\UserController@view_assessments')->name('learner-view-assessment');
 
 });
 
@@ -69,6 +75,12 @@ Route::group(
     Route::get('/class/{course_subject_id}/{lecturer_id}/students-list', 'Lecturer\CourseSubjectUserController@view_class_students')->name('lecturer-class-student-list');
     Route::post('/store-post/{course_subject_user_id}', 'Lecturer\PostController@store')->name('lecturer-store-post');
     Route::post('/store-comment/{post_id}', 'Lecturer\CommentController@store')->name('lecturer-store-comment');
+    Route::get('/my-inbox', 'Lecturer\MessageController@inbox')->name('lecturer-my-inbox');
+    Route::get('/view/messages/{message_thread_id}', 'Lecturer\MessageController@view_messages')->name('lecturer-view-messages');
+    Route::post('/reply/{message_thread_id}', 'Lecturer\MessageController@reply')->name('lecturer-reply-message');
+    Route::get('/add/assessment/{course_subject_user__id}', 'Lecturer\UserController@add_assessment')->name('lecturer-add-assessment');
+    Route::post('/store/assessment/{course_subject_user__id}', 'Lecturer\UserController@store_assessment')->name('lecturer-store-assessment');
+    Route::get('/view/assessment/{course_subject_user__id}', 'Lecturer\UserController@view_assessments')->name('lecturer-view-assessment');
 
 });
 

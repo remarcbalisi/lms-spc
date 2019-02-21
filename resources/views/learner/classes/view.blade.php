@@ -7,7 +7,8 @@
                 <div class="card">
                     <div class="card-header">
                         <a href="">Course Materials</a> |
-                        <a href="">Announcements</a>
+                        <a href="">Announcements</a> |
+                        <a href="{{route('learner-view-assessment', ['course_subject_user_id'=>$course_subject_user->id])}}">My Assessments</a>
                     </div>
                 </div>
             </div>
