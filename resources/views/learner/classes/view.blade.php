@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <a href="">Course Materials</a> |
@@ -15,11 +15,9 @@
         </div>
     </div>
 
-    <br>
-
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
 
                     <div class="card-body">
@@ -68,12 +66,10 @@
             </div>
         </div>
 
-        <br>
-
         @foreach( $course_subject->course_subject_users()->get() as $course_subject_user )
             @foreach( $course_subject_user->posts()->orderBy('created_at', 'desc')->get() as $post )
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card">
 
                             <div class="card-body">
