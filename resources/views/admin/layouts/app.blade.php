@@ -13,200 +13,381 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    {{--<link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
+    {{--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">--}}
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{--<!-- Styles -->--}}
+    {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ asset('creative_tim/js/material-dashboard.min.js') }}" defer></script>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    <link href="{{ asset('creative_tim/css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
+
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    {{--<nav class="navbar navbar-expand-md navbar-light navbar-laravel">--}}
+        {{--<div class="container">--}}
+            {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+                {{--{{ config('app.name', 'Laravel') }}--}}
+            {{--</a>--}}
+            {{--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
+                {{--<span class="navbar-toggler-icon"></span>--}}
+            {{--</button>--}}
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+            {{--<div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
+                {{--<!-- Left Side Of Navbar -->--}}
+                {{--<ul class="navbar-nav mr-auto">--}}
 
-                    @auth
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Academic Year <span class="caret"></span>
-                            </a>
+                    {{--@auth--}}
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--Academic Year <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin-academic-year-create') }}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="{{ route('admin-academic-year-list') }}">
-                                    List
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{ route('admin-academic-year-create') }}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="{{ route('admin-academic-year-list') }}">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                User <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--User <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-user-create')}}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="{{route('admin-user-list')}}">
-                                    List
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-user-create')}}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-user-list')}}">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Semester <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--Semester <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-semester-create')}}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="">
-                                    List
-                                </a>
-                                <a class="dropdown-item" href="{{route('admin-add-semester-to-academic-year')}}">
-                                    Add Semester To Academic year
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-semester-create')}}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-add-semester-to-academic-year')}}">--}}
+                                    {{--Add Semester To Academic year--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                College <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--College <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-college-create')}}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="">
-                                    List
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-college-create')}}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Course <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--Course <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-course-create')}}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="">
-                                    List
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-course-create')}}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Subject <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--Subject <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-subject-create')}}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="">
-                                    List
-                                </a>
-                                <a class="dropdown-item" href="{{route('admin-add-subject-to-course')}}">
-                                    Add Subject to a Course
-                                </a>
-                                <a class="dropdown-item" href="{{route('admin-enroll-student')}}">
-                                    Enroll student to a Course
-                                </a>
-                                <a class="dropdown-item" href="{{route('admin-add-lecturer-to-course')}}">
-                                    Add Lecturer to a Course
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-subject-create')}}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-add-subject-to-course')}}">--}}
+                                    {{--Add Subject to a Course--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-enroll-student')}}">--}}
+                                    {{--Enroll student to a Course--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-add-lecturer-to-course')}}">--}}
+                                    {{--Add Lecturer to a Course--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Section <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--Section <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-section-create')}}">
-                                    Create
-                                </a>
-                                <a class="dropdown-item" href="">
-                                    List
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-section-create')}}">--}}
+                                    {{--Create--}}
+                                {{--</a>--}}
+                                {{--<a class="dropdown-item" href="">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Class <span class="caret"></span>
-                            </a>
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--Class <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('admin-view-classes')}}">
-                                    List
-                                </a>
-                            </div>
-                        </li>
+                            {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{route('admin-view-classes')}}">--}}
+                                    {{--List--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
 
-                    @endauth
+                    {{--@endauth--}}
 
-                </ul>
+                {{--</ul>--}}
 
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->fname }} {{ Auth::user()->lname }} <span class="caret"></span>
-                            </a>
+                {{--<!-- Right Side Of Navbar -->--}}
+                {{--<ul class="navbar-nav ml-auto">--}}
+                    {{--<!-- Authentication Links -->--}}
+                    {{--@guest--}}
+                        {{--<li class="nav-item">--}}
+                            {{--<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
+                        {{--</li>--}}
+                        {{--@if (Route::has('register'))--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--@else--}}
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+                                {{--{{ Auth::user()->fname }} {{ Auth::user()->lname }} <span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                            {{--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
+                                {{--<a class="dropdown-item" href="{{ route('logout') }}"--}}
+                                   {{--onclick="event.preventDefault();--}}
+                                                     {{--document.getElementById('logout-form').submit();">--}}
+                                    {{--{{ __('Logout') }}--}}
+                                {{--</a>--}}
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
+                                {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+                                    {{--@csrf--}}
+                                {{--</form>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                    {{--@endguest--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</nav>--}}
+
+    {{--<main class="py-4">--}}
+        {{--@yield('content')--}}
+    {{--</main>--}}
+    <div class="wrapper ">
+        <div class="sidebar" data-color="danger" data-background-color="white">
+            <!--
+            Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+            Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    LMS-SPC
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <!-- your sidebar here -->
+                <ul class="nav">
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="#0">
+                            {{--<i class="material-icons">dashboard</i>--}}
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{ route('admin-academic-year-create') }}">
+                            {{--<i class="material-icons">plus</i>--}}
+                            <p>Add Academic Year</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{ route('admin-academic-year-list') }}">
+                            {{--<i class="material-icons">plus</i>--}}
+                            <p>Academic Year List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-user-create')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add User</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-user-list')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>User List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-semester-create')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Semester</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-add-semester-to-academic-year')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Semester to Academic Year</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-college-create')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add College</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-course-create')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Course</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-subject-create')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Subject</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-add-subject-to-course')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Subject to Course</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-enroll-student')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Enroll Student to a Course</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-add-lecturer-to-course')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Lecturer to a Course</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-section-create')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Add Section</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-view-classes')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>View Classes</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <a class="navbar-brand" href="#pablo">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="nav-link" href="#pablo">--}}
+                                    {{--<i class="material-icons">notifications</i> Notifications--}}
+                                {{--</a>--}}
 
-    <main class="py-4">
-        @yield('content')
-    </main>
+                            {{--</li>--}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                    <i class="material-icons">settings_power</i> Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                            <!-- your navbar here -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <!-- your content here -->
+                    @yield('content')
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            <li>
+                                <a href="https://www.creative-tim.com">
+                                    LMS-SPC
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;
+                        2019, made with <i class="material-icons">favorite</i> by
+                        <a href="#" target="_blank">St. Peter's College</a> for a better web.
+                    </div>
+                    <!-- your footer here -->
+                </div>
+            </footer>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>
