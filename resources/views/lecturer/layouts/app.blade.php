@@ -146,8 +146,9 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="material-icons">notifications</i> Notifications
+                                <a class="nav-link" href="{{route('lecturer-my-inbox')}}">
+                                    <i class="material-icons">inbox</i> Inbox
+                                    <span class="notification">{{count($new_messages)}}</span>
                                 </a>
 
                             </li>
