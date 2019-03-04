@@ -21,4 +21,8 @@ class CourseSubjectController extends Controller
             "post_types" => PostType::get(),
         ]);
     }
+
+    public function conference_room() {
+        return view('learner.classes.conference_room');
+    }
 }

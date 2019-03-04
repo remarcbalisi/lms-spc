@@ -54,6 +54,7 @@ Route::group(
     Route::get('/view/messages/{message_thread_id}', 'Learner\MessageController@view_messages')->name('learner-view-messages');
     Route::post('/reply/{message_thread_id}', 'Learner\MessageController@reply')->name('learner-reply-message');
     Route::get('/view/assessment/{course_subject_user__id}', 'Learner\UserController@view_assessments')->name('learner-view-assessment');
+    Route::get('/conference-room', 'Learner\CourseSubjectController@conference_room')->name('learner-conference-room');
 
 });
 
