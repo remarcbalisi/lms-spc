@@ -144,11 +144,11 @@ __webpack_require__.r(__webpack_exports__);
       var Peer = __webpack_require__(/*! simple-peer */ "./node_modules/simple-peer/index.js");
 
       var peer = new Peer({
-        // initiator: this.userRole === 2,
+        initiator: _this.userRole === 2,
         trickle: false,
         stream: stream
-      });
-      peer.initiator = _this.userRole === 2;
+      }); // peer.initiator = this.userRole === 2;
+
       peer.on('signal', function (data) {
         console.log(JSON.stringify(data));
         document.getElementById('yourId').value = JSON.stringify(data);
