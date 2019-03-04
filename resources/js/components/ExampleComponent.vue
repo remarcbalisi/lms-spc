@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        
+
                         <label>Your ID:</label><br/>
                         <textarea id="yourId"></textarea><br/>
                         <label>Other ID:</label><br/>
@@ -48,6 +48,7 @@
                 })
 
                 peer.on('signal', function (data) {
+                    console.log(JSON.stringify(data));
                     document.getElementById('yourId').value = JSON.stringify(data)
                 })
 

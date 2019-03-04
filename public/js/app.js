@@ -146,6 +146,7 @@ __webpack_require__.r(__webpack_exports__);
         stream: stream
       });
       peer.on('signal', function (data) {
+        console.log(JSON.stringify(data));
         document.getElementById('yourId').value = JSON.stringify(data);
       });
       document.getElementById('connect').addEventListener('click', function () {
