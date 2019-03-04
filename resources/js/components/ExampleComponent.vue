@@ -18,6 +18,8 @@
                         <button id="send">send</button>
                         <pre id="messages"></pre>
 
+                        <video id="conference-video"></video>
+
                     </div>
                 </div>
             </div>
@@ -67,8 +69,8 @@
                 })
 
                 peer.on('stream', function (stream) {
-                    var video = document.createElement('video')
-                    document.body.appendChild(video)
+                    var video = document.getElementById('conference-video')
+                    // document.body.appendChild(video)
 
                     video.src = window.URL.createObjectURL(stream)
                     video.play()

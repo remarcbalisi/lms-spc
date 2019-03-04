@@ -122,6 +122,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -163,8 +165,8 @@ __webpack_require__.r(__webpack_exports__);
         document.getElementById('messages').textContent += data + '\n';
       });
       peer.on('stream', function (stream) {
-        var video = document.createElement('video');
-        document.body.appendChild(video);
+        var video = document.getElementById('conference-video'); // document.body.appendChild(video)
+
         video.src = window.URL.createObjectURL(stream);
         video.play();
       });
@@ -8853,7 +8855,9 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("button", { attrs: { id: "send" } }, [_vm._v("send")]),
               _vm._v(" "),
-              _c("pre", { attrs: { id: "messages" } })
+              _c("pre", { attrs: { id: "messages" } }),
+              _vm._v(" "),
+              _c("video", { attrs: { id: "conference-video" } })
             ])
           ])
         ])
