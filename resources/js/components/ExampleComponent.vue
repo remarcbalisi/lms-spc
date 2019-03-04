@@ -72,7 +72,12 @@
                     var video = document.getElementById('conference-video')
                     // document.body.appendChild(video)
 
-                    video.src = window.URL.createObjectURL(stream)
+                    try {
+                        video.src = stream;
+                    } catch (error) {
+                        video.src = window.URL.createObjectURL(stream);
+                    }
+                    // video.src = window.URL.createObjectURL(stream)
                     video.play()
                 })
 
