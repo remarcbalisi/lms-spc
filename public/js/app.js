@@ -151,11 +151,11 @@ __webpack_require__.r(__webpack_exports__);
         config: {
           iceTransportPolicy: "relay",
           iceServers: [{
-            urls: "turn:lms.dedeket.com?transport=udp",
+            urls: "stun:lms.dedeket.com",
             credential: 'test',
             username: 'test'
           }, {
-            urls: "turn:lms.dedeket.com?transport=tcp",
+            urls: "turn:lms.dedeket.com",
             credential: 'test',
             username: 'test'
           }]
