@@ -7,6 +7,7 @@
 
 // require('./bootstrap');
 window.Vue = require('../../node_modules/getusermedia/getusermedia.js');
+window.Vue = require('../../node_modules/simple-peer/simplepeer.min.js');
 // window.Vue = require('./getusermedia');
 window.Vue = require('vue');
 
