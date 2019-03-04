@@ -46,7 +46,25 @@
                 var peer = new Peer({
                     initiator: this.userRole === 2,
                     trickle: false,
-                    stream: stream
+                    stream: stream,
+                    config: {
+                        iceTransportPolicy: "relay",
+                        iceServers: [
+                            {
+                                urls: "turn:lms.dedeket.com?transport=udp",
+                                credential: 'test',
+                                username: 'test'
+                            },
+                            {
+                                urls: "turn:lms.dedeket.com?transport=tcp",
+                                credential: 'test',
+                                username: 'test'
+                            },
+                            //{ urls: "stun:188.166.238.179:5349" },
+                            //{ urls: "stun:stun.l.google.com:19302" },
+                            //{ urls: "stun:global.stun.twilio.com:3478?transport=udp" }
+                        ]
+                    }
                 })
 
                 // peer.initiator = this.userRole === 2;

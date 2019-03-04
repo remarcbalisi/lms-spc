@@ -147,7 +147,19 @@ __webpack_require__.r(__webpack_exports__);
       var peer = new Peer({
         initiator: _this.userRole === 2,
         trickle: false,
-        stream: stream
+        stream: stream,
+        config: {
+          iceTransportPolicy: "relay",
+          iceServers: [{
+            urls: "turn:lms.dedeket.com?transport=udp",
+            credential: 'test',
+            username: 'test'
+          }, {
+            urls: "turn:lms.dedeket.com?transport=tcp",
+            credential: 'test',
+            username: 'test'
+          }]
+        }
       }); // peer.initiator = this.userRole === 2;
 
       peer.on('signal', function (data) {
