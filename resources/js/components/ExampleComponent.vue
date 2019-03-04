@@ -73,7 +73,7 @@
                     // document.body.appendChild(video)
 
                     try {
-                        video.src = stream;
+                        video.srcObject = stream;
                     } catch (error) {
                         video.src = window.URL.createObjectURL(stream);
                     }

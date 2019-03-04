@@ -168,7 +168,7 @@ __webpack_require__.r(__webpack_exports__);
         var video = document.getElementById('conference-video'); // document.body.appendChild(video)
 
         try {
-          video.src = stream;
+          video.srcObject = stream;
         } catch (error) {
           video.src = window.URL.createObjectURL(stream);
         } // video.src = window.URL.createObjectURL(stream)
