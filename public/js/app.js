@@ -137,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
       audio: true
     }, function (err, stream) {
       if (err) return console.error(err);
+      console.log('stream');
 
       var Peer = __webpack_require__(/*! simple-peer */ "./node_modules/simple-peer/index.js");
 

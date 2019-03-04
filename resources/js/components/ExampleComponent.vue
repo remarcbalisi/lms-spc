@@ -40,6 +40,7 @@
             this.getUserMedia({video:true, audio: true}, function (err, stream) {
                 if (err) return console.error(err)
 
+                console.log('stream');
                 var Peer = require('simple-peer')
                 var peer = new Peer({
                     initiator: this.userRole === 2,
