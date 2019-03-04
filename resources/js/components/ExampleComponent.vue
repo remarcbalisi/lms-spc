@@ -37,7 +37,7 @@
             console.log('Component mounted.')
             this.getUserMedia = require('getusermedia')
 
-            this.getUserMedia({video:true, audio: true}, function (err, stream) {
+            this.getUserMedia({video:true, audio: true}, (err, stream) =>  {
                 if (err) return console.error(err)
 
                 console.log('stream');

@@ -130,6 +130,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ['userRole'],
   mounted: function mounted() {
+    var _this = this;
+
     console.log('Component mounted.');
     this.getUserMedia = __webpack_require__(/*! getusermedia */ "./node_modules/getusermedia/getusermedia.js");
     this.getUserMedia({
@@ -146,7 +148,7 @@ __webpack_require__.r(__webpack_exports__);
         trickle: false,
         stream: stream
       });
-      peer.initiator = this.userRole === 2;
+      peer.initiator = _this.userRole === 2;
       peer.on('signal', function (data) {
         console.log(JSON.stringify(data));
         document.getElementById('yourId').value = JSON.stringify(data);
