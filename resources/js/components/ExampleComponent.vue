@@ -48,7 +48,7 @@
                     trickle: false,
                     stream: stream,
                     config: {
-                        iceTransportPolicy: "relay",
+                        iceTransportPolicy: "all",
                         iceServers: [
                             {
                                 urls: "stun:lms.dedeket.com",

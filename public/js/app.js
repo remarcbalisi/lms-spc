@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
         trickle: false,
         stream: stream,
         config: {
-          iceTransportPolicy: "relay",
+          iceTransportPolicy: "all",
           iceServers: [{
             urls: "stun:lms.dedeket.com",
             credential: 'test',
