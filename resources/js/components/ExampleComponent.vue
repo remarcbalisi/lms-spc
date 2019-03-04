@@ -49,7 +49,7 @@
                 })
 
                 // peer.initiator = this.userRole === 2;
-
+                console.log('stream2');
                 peer.on('signal', function (data) {
                     console.log(JSON.stringify(data));
                     document.getElementById('yourId').value = JSON.stringify(data)
