@@ -14,8 +14,8 @@
                             </div>
                         @endif
 
-                        <example-component>
-                            conference.
+                        <example-component :user-role="{{Auth::user()->role_user()->first()->role_id}}">
+
                         </example-component>
                     </div>
                 </div>

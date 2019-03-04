@@ -111,12 +111,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       getUserMedia: null
     };
   },
+  props: ['userRole'],
   mounted: function mounted() {
     console.log('Component mounted.');
     this.getUserMedia = __webpack_require__(/*! getusermedia */ "./node_modules/getusermedia/getusermedia.js");
@@ -129,9 +141,29 @@ __webpack_require__.r(__webpack_exports__);
       var Peer = __webpack_require__(/*! simple-peer */ "./node_modules/simple-peer/index.js");
 
       var peer = new Peer({
-        initiator: location.hash === '#init',
+        initiator: this.userRole === 2,
         trickle: false,
         stream: stream
+      });
+      peer.on('signal', function (data) {
+        document.getElementById('yourId').value = JSON.stringify(data);
+      });
+      document.getElementById('connect').addEventListener('click', function () {
+        var otherId = JSON.parse(document.getElementById('otherId').value);
+        peer.signal(otherId);
+      });
+      document.getElementById('send').addEventListener('click', function () {
+        var yourMessage = document.getElementById('yourMessage').value;
+        peer.send(yourMessage);
+      });
+      peer.on('data', function (data) {
+        document.getElementById('messages').textContent += data + '\n';
+      });
+      peer.on('stream', function (stream) {
+        var video = document.createElement('video');
+        document.body.appendChild(video);
+        video.src = window.URL.createObjectURL(stream);
+        video.play();
       });
     });
   }
@@ -8775,9 +8807,28 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+              _c("label", [_vm._v("Your ID:")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("textarea", { attrs: { id: "yourId" } }),
+              _c("br"),
+              _vm._v(" "),
+              _c("label", [_vm._v("Other ID:")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("textarea", { attrs: { id: "otherId" } }),
+              _vm._v(" "),
+              _c("button", { attrs: { id: "connect" } }, [_vm._v("connect")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("label", [_vm._v("Enter Message:")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("textarea", { attrs: { id: "yourMessage" } }),
+              _vm._v(" "),
+              _c("button", { attrs: { id: "send" } }, [_vm._v("send")]),
+              _vm._v(" "),
+              _c("pre", { attrs: { id: "messages" } })
             ])
           ])
         ])

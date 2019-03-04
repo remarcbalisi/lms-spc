@@ -6,7 +6,18 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        
+                        <label>Your ID:</label><br/>
+                        <textarea id="yourId"></textarea><br/>
+                        <label>Other ID:</label><br/>
+                        <textarea id="otherId"></textarea>
+                        <button id="connect">connect</button><br/>
+
+                        <label>Enter Message:</label><br/>
+                        <textarea id="yourMessage"></textarea>
+                        <button id="send">send</button>
+                        <pre id="messages"></pre>
+
                     </div>
                 </div>
             </div>
@@ -21,6 +32,7 @@
                 getUserMedia: null,
             }
         },
+        props: ['userRole'],
         mounted() {
             console.log('Component mounted.')
             this.getUserMedia = require('getusermedia')
@@ -30,9 +42,35 @@
 
                 var Peer = require('simple-peer')
                 var peer = new Peer({
-                    initiator: location.hash === '#init',
+                    initiator: this.userRole === 2,
                     trickle: false,
                     stream: stream
+                })
+
+                peer.on('signal', function (data) {
+                    document.getElementById('yourId').value = JSON.stringify(data)
+                })
+
+                document.getElementById('connect').addEventListener('click', function () {
+                    var otherId = JSON.parse(document.getElementById('otherId').value)
+                    peer.signal(otherId)
+                })
+
+                document.getElementById('send').addEventListener('click', function () {
+                    var yourMessage = document.getElementById('yourMessage').value
+                    peer.send(yourMessage)
+                })
+
+                peer.on('data', function (data) {
+                    document.getElementById('messages').textContent += data + '\n'
+                })
+
+                peer.on('stream', function (stream) {
+                    var video = document.createElement('video')
+                    document.body.appendChild(video)
+
+                    video.src = window.URL.createObjectURL(stream)
+                    video.play()
                 })
 
             })
