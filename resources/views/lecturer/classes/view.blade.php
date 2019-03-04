@@ -7,7 +7,8 @@
                 <div class="card">
                     <div class="card-header">
                         <a href="">Course Materials</a> |
-                        <a href="">Announcements</a>
+                        <a href="">Announcements</a> |
+                        <a href="{{route('lecturer-conference-room')}}">Conference Room</a>
                     </div>
                 </div>
             </div>

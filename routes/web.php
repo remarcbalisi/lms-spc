@@ -81,7 +81,7 @@ Route::group(
     Route::get('/add/assessment/{course_subject_user__id}', 'Lecturer\UserController@add_assessment')->name('lecturer-add-assessment');
     Route::post('/store/assessment/{course_subject_user__id}', 'Lecturer\UserController@store_assessment')->name('lecturer-store-assessment');
     Route::get('/view/assessment/{course_subject_user__id}', 'Lecturer\UserController@view_assessments')->name('lecturer-view-assessment');
-
+    Route::get('/conference-room', 'Lecturer\CourseSubjectController@conference_room')->name('lecturer-conference-room');
 });
 
 
