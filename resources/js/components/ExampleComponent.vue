@@ -43,10 +43,12 @@
                 console.log('stream');
                 var Peer = require('simple-peer')
                 var peer = new Peer({
-                    initiator: this.userRole === 2,
+                    // initiator: this.userRole === 2,
                     trickle: false,
                     stream: stream
                 })
+
+                peer.initiator = this.userRole === 2;
 
                 peer.on('signal', function (data) {
                     console.log(JSON.stringify(data));
