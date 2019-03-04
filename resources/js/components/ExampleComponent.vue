@@ -16,8 +16,26 @@
 
 <script>
     export default {
+        data() {
+            return {
+                getUserMedia: null,
+            }
+        },
         mounted() {
             console.log('Component mounted.')
+            this.getUserMedia = require('getusermedia')
+
+            this.getUserMedia({video:true, audio: true}, function (err, stream) {
+                if (err) return console.error(err)
+
+                var Peer = require('simple-peer')
+                var peer = new Peer({
+                    initiator: location.hash === '#init',
+                    trickle: false,
+                    stream: stream
+                })
+
+            })
         }
     }
 </script>
