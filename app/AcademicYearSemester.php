@@ -21,8 +21,8 @@ class AcademicYearSemester extends Model
         return $this->belongsTo("App\Semester", "semester_id");
     }
 
-    public function courses(){
-        return $this->hasMany("App\Course", "academic_year_semester_id", "id");
+    public function course_subjects(){
+        return $this->hasMany("App\CourseSubject", "academic_year_semester_id", "id");
     }
 
     public function getSemesterFullName(){
