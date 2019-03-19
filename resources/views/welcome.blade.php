@@ -18,21 +18,21 @@
             <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
         <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav">
-                <li role="presentation"><a href="about.html">About</a></li>
-                <li role="presentation"><a href="admissions.html">Admission</a></li>
-                <li role="presentation"><a href="academics.html">Academics</a></li>
-                <li role="presentation"><a href="faculty.html">Faculty & Staff</a></li>
-                <li role="presentation"><a href="research.html">Research</a></li>
-                <li role="presentation"><a href="news.html">News</a></li>
-                <li role="presentation"><a href="opportunities.html">Opportunities</a></li>
-                <li role="presentation"><a href="students-life.html">Student Life</a></li>
-            </ul>
+            {{--<ul class="nav navbar-nav">--}}
+                {{--<li role="presentation"><a href="about.html">About</a></li>--}}
+                {{--<li role="presentation"><a href="admissions.html">Admission</a></li>--}}
+                {{--<li role="presentation"><a href="academics.html">Academics</a></li>--}}
+                {{--<li role="presentation"><a href="faculty.html">Faculty & Staff</a></li>--}}
+                {{--<li role="presentation"><a href="research.html">Research</a></li>--}}
+                {{--<li role="presentation"><a href="news.html">News</a></li>--}}
+                {{--<li role="presentation"><a href="opportunities.html">Opportunities</a></li>--}}
+                {{--<li role="presentation"><a href="students-life.html">Student Life</a></li>--}}
+            {{--</ul>--}}
             <ul class="nav navbar-nav navbar-right" id="myspc">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">My.Spc <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="ul-dropdown">
-                        <li><a href="login.html"> Login </a></li>
+                        <li><a href="{{route('login')}}"> Login </a></li>
                     </ul>
                 </li>
             </ul>
