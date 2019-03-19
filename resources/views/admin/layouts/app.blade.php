@@ -321,6 +321,12 @@
                             <p>View Classes</p>
                         </a>
                     </li>
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="{{route('admin-edit-home-page')}}">
+                            {{--<i class="material-icons">class</i>--}}
+                            <p>Edit HomePage Content</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

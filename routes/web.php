@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with([
+        'landing_page' => \App\LandingPage::first(),
+    ]);
 });
 
 Auth::routes();
@@ -99,6 +101,8 @@ Route::group(
     
     function () {
     Route::get('/home', 'Admin\HomeController@dashboard')->name('admin-home');
+    Route::get('/edit-home-page', 'Admin\HomeController@editHomePage')->name('admin-edit-home-page');
+    Route::put('/update-home-page/{homepage_id}', 'Admin\HomeController@updateHomePage')->name('admin-update-home-page');
     Route::get('/create-academic-year', 'Admin\AcademicYearController@create')->name('admin-academic-year-create');
     Route::post('/store-academic-year', 'Admin\AcademicYearController@store')->name('admin-academic-year-store');
     Route::get('/list-academic-year', 'Admin\AcademicYearController@list')->name('admin-academic-year-list');
